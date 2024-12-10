@@ -1,25 +1,25 @@
-let word = "Довод";
+let word = "довод";
 let backword = "";
 for (let i = word.length - 1; i >= 0; i -= 1) {
     backword += word[i];
 }
-if (word = backword) {
-    alert('Слово Довод является палиндромом');
+if (word === backword) {
+    alert('Слово довод является палиндромом');
 }
 else {
-    alert('Слово Довод не является палиндромом')
+    alert('Слово довод не является палиндромом')
 }
 
-let wordsecond = "Сантимент";
+let wordsecond = "сантимент";
 let backwordsecond = "";
 for (let i = wordsecond.length - 1; i >= 0; i -= 1) {
     backwordsecond += wordsecond[i];
 }
 if (wordsecond !== backwordsecond) {
-    alert('Слово Сантимент не является палиндромом');
+    alert('Слово сантимент не является палиндромом');
 }
 else {
-    alert('Слово Сантимент является палиндромом')
+    alert('Слово сантимент является палиндромом')
 }
 
 

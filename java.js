@@ -1,3 +1,16 @@
+const yournumber = prompt ('введите любое число');
++yournumber
+let double = yournumber**2;
+let triple = yournumber**3; 
+alert ( yournumber, double, triple ); 
+
+
+
+
+
+
+
+
 let word = "довод";
 let backword = "";
 for (let i = word.length - 1; i >= 0; i -= 1) {
@@ -64,3 +77,16 @@ for (let key in obj) {
 arrValues.push(obj[key]); 
 };
 console.log(arrValues);
+
+
+
+function createUser(name, age) {
+    return {
+        userName: name,
+        userAge: age
+    }
+}
+
+let jediUser = createUser('Оби-ван Кеноби', 74)
+
+console.log('Новый пользователь: ', jediUser) 

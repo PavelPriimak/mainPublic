@@ -67,16 +67,26 @@ function calculate(a, b, operator) {
 
 
   
-  const obj2 = {};
+  const person2 = {};  
   
-  function setFullName() {
-    obj2.fullName = "Nick Jonson"
-    console.log(`My name is ${this.fullName}`)
+  function setPersonFullName (fullName) {
+    this.fullName = fullName;
   };
-  
-  const person2 = {
-    fullName2: "Johny",
-  };
-  
-  const setPersonFullName = obj2.fullName.bind(person2);
-  setPersonFullName("John Smith");
+
+  const doneSetPersonFullName = setPersonFullName.bind(person2);
+
+  doneSetPersonFullName("John Smith");
+  console.log(person2.fullName);
+
+
+
+
+  function a () {  
+    const numbers = [1,3,5,2,3,1,6,9,6,5];
+    const uniqueSet = new Set(numbers);  
+    const uniqueArr = Array.from(uniqueSet);
+    const finalUniqueArr = uniqueArr.sort();
+    console.log(finalUniqueArr);
+    };
+    a();
+

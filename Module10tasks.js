@@ -3,7 +3,7 @@ const icon = document.querySelector(".icon");
 const icon2 = document.querySelector(".icon2");
 
 btn.addEventListener("click", () => {
-    if(icon.style.display = "block") {
+    if(icon.style.display === "block") {
         icon.style.display = "none";
         icon2.style.display = "block"
     }
@@ -43,11 +43,15 @@ const input = document.querySelector(".input");
 const output = document.querySelector(".output");
 const webSocket = new WebSocket(url);
 
+function opening () {
+webSocket.onopen = function(event) {
+    if(event)
+    console.log("Connected");
+}};
+
+opening();
+
 btnSendMessage.addEventListener("click", () => {
-    webSocket.onopen = function(event) {
-        if(event)
-        console.log("Connected");
-    };
     const message = input.value;
     webSocket.send(message)
     webSocket.onmessage = function(event) {

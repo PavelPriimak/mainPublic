@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import Header from './components/header/header';
 import Main from './components/main/main';
 import Footer from './components/footer/footer';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const data = require ("../src/mock.json");
 
 function App() {
-  const{tasks, setTasks} = useState(data)
+  const [tasks, setTasks] = useState(data)
 
   useEffect(() => {
 		window.localStorage.setItem('tasks', JSON.stringify(tasks))
@@ -17,11 +17,11 @@ function App() {
 
   return (
       <div className='wrapper'>
-        <Router>
+        <BrowserRouter>
             <Header />
             <Main tasks={tasks} setTasks={setTasks} />
             <Footer tasks={tasks} /> 
-        </Router>    
+        </BrowserRouter>    
       </div>
   );
 }

@@ -17,11 +17,9 @@ function App() {
 
   return (
       <div className='wrapper'>
-        <BrowserRouter>
             <Header />
             <Main tasks={tasks} setTasks={setTasks} />
-            <Footer tasks={tasks} /> 
-        </BrowserRouter>    
+            <Footer tasks={tasks} />     
       </div>
   );
 }

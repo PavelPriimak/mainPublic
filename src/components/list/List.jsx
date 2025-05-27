@@ -11,7 +11,7 @@ const List = props => {
 	const {isFormVisible, setFormVisible} = useState(false)
 
 	const handleClick = () => {
-		setFormVisible(!isFormVisible)
+		setFormVisible ( !isFormVisible )
 	}
 
 	const formSubmit = (title, description) => {

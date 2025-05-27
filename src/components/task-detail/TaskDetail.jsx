@@ -1,4 +1,4 @@
-import { Link, useParams} from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { LIST_TYPES, LIST_COPY } from '../../config'
 import { formatDate } from '../../utils'
 import css from './TaskDetail.css'

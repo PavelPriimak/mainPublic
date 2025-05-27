@@ -1,21 +1,17 @@
-import css from './main.css'
-import Board from '../board/board'
-import { BrowserRouter, Route} from "react-router-dom"
-import TaskDetail from '../task-detail/TaskDetail'
+import css from './main.css';
+import Board from '../board/board';
+import TaskDetail from '../task-detail/TaskDetail';
+import { Routes, Route } from 'react-router-dom';
 
 const Main = (props) => {
-	return (
-		<main className={css.main}>
-			<BrowserRouter>
-				<Route exact path={'/'}>
-					<Board {...props} />
-				</Route>
-				<Route path={'/tasks/:taskId'}>
-					<TaskDetail {...props} />
-				</Route>
-			</BrowserRouter>
-		</main>
-	)
-}
+  return (
+    <main className={css.main}>
+      <Routes> - тут именно  Routes - компонент обертка с буквой S на конце
+        <Route path='/' element={<Board {...props} />} /> - тут просто компонет
+        <Route path='/tasks/:taskId' element={<TaskDetail {...props} />} />
+      </Routes>
+    </main>
+  );
+};
 
-export default Main
+export default Main;

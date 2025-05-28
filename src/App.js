@@ -10,8 +10,8 @@ function App() {
   const [tasks, setTasks] = useState(data)
 
   useEffect(() => {
-		window.localStorage.setItem('tasks', JSON.stringify(tasks))
-	}, [tasks])
+		window.localStorage.setItem('tasks', tasks)
+	})
 
 
 

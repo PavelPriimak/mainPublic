@@ -1,4 +1,6 @@
 .main {
+	display: flex;
+	flex-direction: row;
 	background: #ececec;
 	padding: 20px;
 	flex-grow: 1;

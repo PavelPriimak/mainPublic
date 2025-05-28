@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/header/header';
 import Main from './components/main/main';
 import Footer from './components/footer/footer';
-import { BrowserRouter } from 'react-router-dom';
+
 
 const data = require ("../src/mock.json");
 

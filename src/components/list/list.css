@@ -1,4 +1,6 @@
 .list {
+    display: flex;
+	flex-direction: row;
 	width: 350px;
 	background: #fff;
 	padding: 20px;
@@ -9,6 +11,8 @@
 }
 
 .listTitle {
+	display: flex;
+	flex-direction: row;
 	margin-top: 0;
 }
 

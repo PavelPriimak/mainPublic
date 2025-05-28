@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useMatch} from 'react-router-dom'
 import { LIST_TYPES, LIST_COPY } from '../../config'
 import { formatDate } from '../../utils'
 import css from './TaskDetail.css'
@@ -6,7 +6,7 @@ import Header from '../header/header'
 import Logo from '../../svg/user-avatar.svg'
 
 const TaskDetail = (props) => {
-	const match = useParams()
+	const match = useMatch()
 	const {taskId} = match.params
 	const {tasks, setTasks} = props
 	const task = tasks.find(task => task.id === taskId)

@@ -6,8 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 const Main = (props) => {
   return (
     <main className={css.main}>
-      <Routes> - тут именно  Routes - компонент обертка с буквой S на конце
-        <Route path='/' element={<Board {...props} />} /> - тут просто компонет
+      <Routes>
+        <Route path='/' element={<Board {...props} />} />
         <Route path='/tasks/:taskId' element={<TaskDetail {...props} />} />
       </Routes>
     </main>

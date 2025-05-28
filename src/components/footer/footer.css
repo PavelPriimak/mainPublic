@@ -1,4 +1,6 @@
 .footer {
+	display: flex;
+	flex-direction: row;
 	min-height: 50px;
 	background: #0067A3;
 	color: #fff;

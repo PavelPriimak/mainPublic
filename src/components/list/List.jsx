@@ -8,7 +8,7 @@ import FormAddNewTask from '../forms/FormAddNewTask'
 
 const List = props => {
 	const {type, title, tasks, addNewTask} = props
-	const {isFormVisible, setFormVisible} = useState(false)
+	const [isFormVisible, setFormVisible] = useState(false)
 
 	const handleClick = () => {
 		setFormVisible ( !isFormVisible )

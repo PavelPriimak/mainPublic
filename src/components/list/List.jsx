@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LIST_TYPES, LIST_COLORS } from '../../config'
-import css from './list.css'
+import css from './list.module.css'
 import FormAddNewTask from '../forms/FormAddNewTask'
 
 

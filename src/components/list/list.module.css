@@ -1,8 +1,7 @@
 .list {
-    display: flex;
-	flex-direction: row;
 	width: 350px;
-	background: #fff;
+	height: max-content;
+	background:#EBECF0;
 	padding: 20px;
 	border-radius: 8px;
 	box-sizing: border-box;

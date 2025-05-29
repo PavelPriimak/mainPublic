@@ -1,7 +1,7 @@
 import uniqid from 'uniqid'
 import {LIST_TYPES, LIST_COPY} from '../../config'
 import List from '../list/List'
-import css from './board.css'
+import css from './board.module.css'
 
 
 const Board = (props) => {

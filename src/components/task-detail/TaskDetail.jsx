@@ -2,7 +2,6 @@ import { Link, useMatch} from 'react-router-dom'
 import { LIST_TYPES, LIST_COPY } from '../../config'
 import { formatDate } from '../../utils'
 import css from './TaskDetail.module.css'
-import Header from '../header/header'
 import Logo from '../../svg/user-avatar.svg'
 
 const TaskDetail = (props) => {
@@ -25,7 +24,6 @@ const TaskDetail = (props) => {
 	const renderTaskDetails = () => {
 		return (
 			<>
-				<Header />
 				<Link to='/' className='css.homeLink'>Back to main menu</Link>
 				<p className={css.createdAt}>Created at: {formatDate(task.created)}</p>
 				<p>Description: {task.description || '(no description)'}</p>

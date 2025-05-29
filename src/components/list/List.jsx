@@ -25,8 +25,8 @@ const List = props => {
 			<h2 className={css.listTitle}>{title}</h2>
 				{tasks.map(task => {
 					return (
-						<Link to={`/tasks/${task.id}`}className={css.taskLink}>
-						    <div key={task.id} className={css.task} style={{background: LIST_COLORS[type]}}>{task.title}</div>
+						<Link to={'/:taskId'} key={task.id} className={css.taskLink}>
+						    <div className={css.task} style={{background: LIST_COLORS[type]}}>{task.title}</div>
 						</Link>
 					)
 				})}

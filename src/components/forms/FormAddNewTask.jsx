@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import clsx from 'clsx'
-import css from './FormAddNewTask.css'
+import css from './FormAddNewTask.module.css'
 
 const FormAddNewTask = props => {
 	const {formSubmit} = props

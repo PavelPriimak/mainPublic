@@ -1,4 +1,4 @@
-import css from './footer.css'
+import css from './footer.module.css'
 
 
 

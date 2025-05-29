@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
 		window.localStorage.setItem('tasks', tasks)
-	})
+	}, [tasks] )
 
 
 

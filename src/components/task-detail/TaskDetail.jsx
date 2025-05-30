@@ -24,10 +24,11 @@ const TaskDetail = (props) => {
 	const renderTaskDetails = () => {
 		return (
 			<div className={css.wrapper}>
-				<Link to={`/tasks/${task.id}`} key={task.id} className={css.taskLink}/>
+				<Link to={`/tasks/:taskId}`} key={task.id} className={css.taskLink}>
 				<p className={css.createdAt}>Created at: {formatDate(task.created)}</p>
 				<p>Description: {task.description || '(no description)'}</p>
 				<p className={css.label}>Change status:</p>
+				</Link>
 				<select className={css.select} onChange={handleChange} value={task.status}>
 					{Object.values(LIST_TYPES).map(list => {
 						return <option key={list} value={list}>{LIST_COPY[list]}</option>

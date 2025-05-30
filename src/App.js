@@ -9,9 +9,12 @@ const data = require ("../src/mock.json");
 function App() {
   const [tasks, setTasks] = useState(data)
 
+  const activeTasks = tasks.filter((task) => task.status === 'inProgress').length;
+  const finishedTasks = tasks.filter((task) => task.status === 'finished').length;
+
   useEffect(() => {
-		window.localStorage.setItem('tasks', tasks)
-	}, [tasks] )
+		window.localStorage.setItem('tasks', JSON.stringify(tasks))
+	}, [tasks])
 
 
 
@@ -19,7 +22,7 @@ function App() {
       <div className='wrapper'>
             <Header />
             <Main tasks={tasks} setTasks={setTasks} />
-            <Footer tasks={tasks} />     
+            <Footer tasks={tasks} activeTasks={activeTasks} finishedTasks={finishedTasks} />     
       </div>
   );
 }

@@ -4,8 +4,9 @@ import List from '../list/List'
 import css from './board.module.css'
 
 
+
 const Board = (props) => {
-	const {tasks, setTasks} = props
+	const {tasks, setTasks } = props
 
 	const addNewTask = (title, description) => {
 		const task = {
@@ -13,7 +14,7 @@ const Board = (props) => {
 			title,
 			description,
 			created: new Date().toISOString(),
-			status: 'backlog',
+			status: 'finished'
 		}
 
 		setTasks([...tasks, task]);

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { LIST_TYPES, LIST_COLORS } from '../../config'
+import { LIST_COLORS } from '../../config'
 import css from './list.module.css'
 import FormAddNewTask from '../forms/FormAddNewTask'
 
@@ -30,10 +30,10 @@ const List = props => {
 						</Link>
 					)
 				})}
-				{type === LIST_TYPES.key && (
+				{type && (
 					<button className={css.addButton} onClick={handleClick}>+Add new Card</button>
 				)}
-				{type === LIST_TYPES.key && isFormVisible && (
+				{type && isFormVisible && (
                     <FormAddNewTask formSubmit={formSubmit} />
 				)}
 		</div>

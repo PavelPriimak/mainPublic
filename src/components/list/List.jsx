@@ -30,10 +30,10 @@ const List = props => {
 						</Link>
 					)
 				})}
-				{type === LIST_TYPES.BACKLOG && (
+				{type === LIST_TYPES.key && (
 					<button className={css.addButton} onClick={handleClick}>+Add new Card</button>
 				)}
-				{type === LIST_TYPES.BACKLOG && isFormVisible && (
+				{type === LIST_TYPES.key && isFormVisible && (
                     <FormAddNewTask formSubmit={formSubmit} />
 				)}
 		</div>

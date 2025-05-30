@@ -5,7 +5,7 @@ import css from './TaskDetail.module.css'
 import Logo from '../../svg/user-avatar.svg'
 
 const TaskDetail = (props) => {
-	const match = useMatch()
+	const match = useMatch('/tasks/:taskId')
 	const {taskId} = match.params
 	const {tasks, setTasks} = props
 	const task = tasks.find(task => task.id === taskId)
@@ -23,8 +23,8 @@ const TaskDetail = (props) => {
 
 	const renderTaskDetails = () => {
 		return (
-			<>
-				<Link to='/' className='css.homeLink'>Back to main menu</Link>
+			<div className={css.wrapper}>
+				<Link to={`/tasks/${task.id}`} key={task.id} className={css.taskLink}/>
 				<p className={css.createdAt}>Created at: {formatDate(task.created)}</p>
 				<p>Description: {task.description || '(no description)'}</p>
 				<p className={css.label}>Change status:</p>
@@ -33,7 +33,7 @@ const TaskDetail = (props) => {
 						return <option key={list} value={list}>{LIST_COPY[list]}</option>
 					})}
 				</select>
-			</>
+			</div>
 		)
 	}
 

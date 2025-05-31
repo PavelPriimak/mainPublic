@@ -19,6 +19,7 @@ const FormAddNewTask = props => {
 			formSubmit(values.title, values.description)
 		}
 	}
+
 	return (
 		<form onSubmit={handleSubmit} className={css.form}>
 			<input className={css.input} id='taskTitle' name='title' type='text' placeholder='Enter task title' onChange={handleChange} value={values.title} />

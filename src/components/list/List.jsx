@@ -7,7 +7,7 @@ import FormAddNewTask from '../forms/FormAddNewTask'
 
 
 const List = props => {
-	const {type, title, tasks, addNewTask, moveTask} = props
+	const {type, title, tasks, addNewTask} = props
 	const [isFormVisible, setFormVisible] = useState(false)
 
 	const handleClick = () => {
@@ -19,9 +19,21 @@ const List = props => {
 		setFormVisible(false)
 	}
 
-	}
+	const moveTask = (taskId, from, to) => {
+		if(taskId) {
+			setTasks((prev) => {
+				const task = prev[from].find((t) => t.id === taskId);
+				return {
+					...prev,
+					[from]: prev[from].filter((t) => t.id !== taskId),
+					[to]: [...prev[to], task],
+				}
+			})
+		}
+		}
 
-{	return (
+	}
+	return (
 		<div className={css.list}>
 			<h2 className={css.listTitle}>{title}</h2>
 				{tasks.map(task => {
@@ -33,11 +45,11 @@ const List = props => {
 				})}
 				{type === LIST_TYPES.BACKLOG ? (
 					<button className={css.addButton} onClick={handleClick}>+Add new Card</button>
-				): ( 
+				): (
 					<select className={css.addMoveTaskButton} onChange={(e) => moveTask(e.target.value, e.target.LIST_TYPES.key, LIST_TYPES.key)} value="">
 						<option value="">Выбирете задачу</option>
 						{LIST_TYPES.keys = newArray[LIST_TYPES.key, index]}
-						tasks[LIST_TYPES.keys[index - 1].key].map((task) => (
+						{tasks[LIST_TYPES.keys[index - 1].key].map((task) => (
 							<option key={task.id} value={task.id}>{task.text}</option>
 						))}
 					</select>
@@ -46,7 +58,8 @@ const List = props => {
                     <FormAddNewTask formSubmit={formSubmit} />
 				)}
 		</div>
-	)
-}
+		)
+	}		
+
 
 export default List

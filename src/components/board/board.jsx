@@ -20,19 +20,6 @@ const Board = (props) => {
 
 		setTasks([...tasks, task]);
 
-		const moveTask = (taskId, from, to) => {
-		if(taskId) {
-			setTasks((prev) => {
-				const task = prev[from].find((t) => t.id === taskId);
-				return {
-					...prev,
-					[from]: prev[from].filter((t) => t.id !== taskId),
-					[to]: [...prev[to], task],
-				}
-			})
-		}
-	}
-
 	return (
 		<div className={css.board}>
 		{
@@ -45,13 +32,12 @@ const Board = (props) => {
 						title={LIST_COPY[type]}
 						tasks={listTasks || []}
 						addNewTask={addNewTask}
-						moveTask={moveTask}
 					/>
 				)
 			})
 		}
 		</div>
 	)
-}
+}}
 
 export default Board

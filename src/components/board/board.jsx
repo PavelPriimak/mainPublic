@@ -5,19 +5,32 @@ import css from './board.module.css'
 
 
 
+
 const Board = (props) => {
 	const {tasks, setTasks } = props
 
-	const addNewTask = (title, description) => {
+	const addNewTask = (title, description, status) => {
 		const task = {
 			id: uniqid(),
 			title,
 			description,
 			created: new Date().toISOString(),
-			status: 'finished'
+			status: 'backlog'
 		}
 
 		setTasks([...tasks, task]);
+
+		const moveTask = (taskId, from, to) => {
+		if(taskId) {
+			setTasks((prev) => {
+				const task = prev[from].find((t) => t.id === taskId);
+				return {
+					...prev,
+					[from]: prev[from].filter((t) => t.id !== taskId),
+					[to]: [...prev[to], task],
+				}
+			})
+		}
 	}
 
 	return (
@@ -32,6 +45,7 @@ const Board = (props) => {
 						title={LIST_COPY[type]}
 						tasks={listTasks || []}
 						addNewTask={addNewTask}
+						moveTask={moveTask}
 					/>
 				)
 			})

@@ -7,8 +7,8 @@
     
     const [tasks] = props
 
-    const activeTasks = tasks.filter(() => columns.key === 'inProgress').length;
-    const finishedTasks = tasks.filter(() => columns.key === 'finished').length;
+    const activeTasks = tasks[columns.key].filter(() => columns.key === 'inProgress').length;
+    const finishedTasks = tasks[columns.key].filter(() => columns.key === 'finished').length;
     
 	return (
 		<footer className={css.footer}> 

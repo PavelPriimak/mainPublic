@@ -1,0 +1,31 @@
+.main_wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #0079BF;
+}
+
+.main_wrapper__list {
+    display: flex;
+    flex-direction: column;
+    background-color: #EBECF0;
+}
+
+.main_wrapper__list_name {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+
+}
+
+.main_wrapper__list_addOrChooseTaskForm {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    border: solid 1px;
+    border-radius: 5px; 
+}
+
+.main_wrapper__list_addOrChooseTaskForm_outPutList {
+    list-style: none;
+    background-color: bisque;
+}
+

@@ -1,0 +1,4 @@
+.taskWindowWrapper {
+    display: flex;
+    flex-direction: column;
+}

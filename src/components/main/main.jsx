@@ -5,7 +5,7 @@ import css from "./main.module.css";
 
 export function KanbanBoard() {
     const [tasks, setTasks] = useState(() => {
-        const savedTasks = localStorage.getItem("KanbanBoard");
+    const savedTasks = localStorage.getItem("KanbanBoard");
         return savedTasks ? JSON.parse(savedTasks) :
         {
             backlog: [],

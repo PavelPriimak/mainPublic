@@ -6,13 +6,12 @@ import css from "./main.module.css";
 export function KanbanBoard() {
     const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("KanbanBoard");
+    const defaultTasks = columns.reduce((acc, column) => {
+        acc[column.key] = [];
+        return acc;
+    }, {});
         return savedTasks ? JSON.parse(savedTasks) :
-        {
-            backlog: [],
-            ready: [],
-            inprogress: [],
-            done: []
-        };
+        defaultTasks;
     });
     const [savingNewTask, setSavingNewTask] = useState ("");
     const navigate = useNavigate()
@@ -46,7 +45,7 @@ export function KanbanBoard() {
                 return {
                     ...prev,
                     [fromList]: prev[fromList].filter((t) => t.id !== taskId),
-                    [toList]: [prev[toList], task],
+                    [toList]: [ ...prev[toList], task],
                 };
             });
         }

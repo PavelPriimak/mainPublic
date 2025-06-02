@@ -45,7 +45,7 @@ export function TaskWindow() {
             <h2 className={css.taskWindow__name}>Задача: {task.text}</h2>
             <div className={css.taskWindow__form}>
                 <label className={css.taskWindow__form_label}>Описание задачи:</label>
-                <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Введите описание задачи" className={css.taskWindow__form_textArea}/>
+                <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Введите описание задачи..." className={css.taskWindow__form_textArea}/>
             </div>
             <button className={css.taskWindow__button} onClick={closeWindow}>Закрыть и вернуться</button>
         </div>

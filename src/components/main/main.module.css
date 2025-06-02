@@ -1,30 +1,46 @@
 .main_wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    height: 590px;
+    gap: 30px;
     background-color: #0079BF;
 }
 
 .main_wrapper__list {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 40px;
+    max-height: fit-content;
+    width: 282px;
+    gap: 40px;
+    min-height: 400px;
     background-color: #EBECF0;
 }
 
 .main_wrapper__list_name {
+    display: flex;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
+    justify-content: center;
+    align-self: center;
 
 }
 
 .main_wrapper__list_addOrChooseTaskForm {
     display: flex;
     flex-direction: column;
+    gap: 20px;
     background-color: aqua;
     border: solid 1px;
     border-radius: 5px; 
 }
 
 .main_wrapper__list_addOrChooseTaskForm_outPutList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     list-style: none;
     background-color: bisque;
 }
@@ -40,6 +56,8 @@
 .main_wrapper__list_addOrChooseTaskForm_addTask {
     display: flex;
     flex-direction: column;
+    align-self: center;
+    gap: 20px;
     background-color: aquamarine;
 }
 
@@ -54,6 +72,7 @@
 }
 
 .main_wrapper__list_addOrChooseTaskForm_addTask_button {
+    width: fit-content;
     border-radius: 10px;
 }
 

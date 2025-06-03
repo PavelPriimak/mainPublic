@@ -5,7 +5,6 @@ import { TaskWindow } from './components/descriptionWindow/descriptionWindow';
 import { KanbanBoard } from './components/main/main';
 
 function App() {
-  
   return (
     <div className='wrapper'>
             <Header />

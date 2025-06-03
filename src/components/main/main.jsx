@@ -51,6 +51,18 @@ export function KanbanBoard() {
         }
     };
 
+    const removeTask = (taskId, from) => {
+        if(taskId) {
+            setTasks((prev) => {
+                const task = prev[from].find((t) => t.id === taskId);
+                return {
+                    ...prev,
+                    [from]: [prev[from].filter((t) => t.id !== taskId)], task,
+                };
+            });
+        }
+    }
+
     const openTaskWindow = (taskId) => {
         navigate(`/task/${taskId}`);
     }
@@ -63,7 +75,9 @@ export function KanbanBoard() {
                    <div className={css.main_wrapper__list_addOrChooseTaskForm}>
                        <ul className={css.main_wrapper__list_addOrChooseTaskForm_outPutList}>
                            {tasks[column.key].map((task) => (
-                           <li key={task.id} onClick={() => openTaskWindow(task.id)} className={css.main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink}>{task.text}</li>
+                           <li key={task.id} onClick={() => openTaskWindow(task.id)} className={css.main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink}>{task.text}
+                           <button onClick={(e) => removeTask(e.target.value, column.key)} disabled={savingNewTask.length === 0} className={css.main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink_btnClose}>&#x3C7;</button>
+                           </li>
                            ))}    
                        </ul> 
                        {column.key === "backlog" ? (

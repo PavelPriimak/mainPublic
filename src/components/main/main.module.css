@@ -1,52 +1,70 @@
 .main_wrapper {
     display: flex;
     flex-direction: row;
-    height: 590px;
-    gap: 30px;
+    height: 600px;
     background-color: #0079BF;
 }
 
 .main_wrapper__list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-left: 40px;
-    max-height: fit-content;
+    padding: 10px;
+    margin: 20px;
+    height: fit-content;
     width: 282px;
-    gap: 40px;
-    min-height: 400px;
+    border-radius: 10px;
     background-color: #EBECF0;
 }
 
 .main_wrapper__list_name {
     display: flex;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 25px;
     font-size: 18px;
-    justify-content: center;
-    align-self: center;
 
 }
 
 .main_wrapper__list_addOrChooseTaskForm {
     display: flex;
     flex-direction: column;
+    max-height: 400px;
     gap: 20px;
-    background-color: aqua;
-    border: solid 1px;
-    border-radius: 5px; 
 }
 
 .main_wrapper__list_addOrChooseTaskForm_outPutList {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    padding: 10px;
     gap: 10px;
     list-style: none;
-    background-color: bisque;
 }
 
 .main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink {
     cursor: pointer;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    min-height: 57px;
+    width: fit-content;
+    min-width: 258px;
+    text-align: center;
+}
+
+.main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink_btnClose{
+    display: none;
+    right: 5px;
+    font-weight: 900;
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    align-self:auto;
+}
+
+.main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink:hover {
+  .main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink_btnClose {
+    display: flex;
+    color: red;
+}
 }
 
 .main_wrapper__list_addOrChooseTaskForm_outPutList_taskLink:hover {
@@ -58,13 +76,11 @@
     flex-direction: column;
     align-self: center;
     gap: 20px;
-    background-color: aquamarine;
 }
 
 .main_wrapper__list_addOrChooseTaskForm_chooseTask {
     display: flex;
     flex-direction: column;
-    background-color: antiquewhite;
 }
 
 .main_wrapper__list_addOrChooseTaskForm_addTask_input {
@@ -76,7 +92,22 @@
     border-radius: 10px;
 }
 
+  .main_wrapper__list_addOrChooseTaskForm_addTask_button:hover {
+    background-color: rgb(45, 201, 45);
+}
+
+
 .main_wrapper__list_addOrChooseTaskForm_chooseTask_select {
     border-radius: 5px;
+    margin-bottom: 15px;
     border: #0079BF;
+}
+
+@media (max-width: 1200px) {
+    .main_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
 }

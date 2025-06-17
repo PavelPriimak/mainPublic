@@ -1,10 +1,21 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+      <shop shop-title='SmartPhones' />
+      <shop shop-title='NoteBooks' />
   </nav>
-  <router-view/>
 </template>
+
+
+<script>
+    import shop from './components/Shop'
+
+    export default {
+      components: {
+        shop
+      }
+    }
+</script>
+
 
 <style lang="scss">
 #app {
